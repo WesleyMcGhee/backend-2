@@ -6,8 +6,8 @@ module.exports= {
         res.status(200).send(houses);
     },
     createHouse: (req, res) => {
-        const { address, price, imageURL } = req.body;
-
+        let { address, price, imageURL } = req.body;
+        price = +price;
         const newHouse = {
             id: houseID,
             address,
